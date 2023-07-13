@@ -44,18 +44,18 @@ public class Main {
         do {
             confirmOption = Integer.parseInt(JOptionPane.showInputDialog("Do you indeed wish to exit the application?\n1- Yes | 2- No"));
             switch (confirmOption) {
-                case 1:
-                    JOptionPane.showMessageDialog(null,"Exiting...");
+                case 1 -> {
+                    JOptionPane.showMessageDialog(null, "Exiting...");
                     System.exit(0);
-                    break;
-                case 2:
+                }
+                case 2 -> {
                     confirmOption = 1;
                     optionMenu = 0;
-                    break;
-                default:
+                }
+                default -> {
                     JOptionPane.showMessageDialog(null, "Invalid input, please try again.");
                     optionMenu = 0;
-                    break;
+                }
             }
         } while (confirmOption != 1);
     }
