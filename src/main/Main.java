@@ -49,7 +49,7 @@ public class Main extends JFrame {
         app.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         /*
-         * "Main Menu of Exercises\n1- Decision structures\n2- Loop structures\n3- Arrays\n4- Recursives \n9- Exit"
+         * "Main Menu of Exercises\n1- Decision structures\n2- Loop structures\n3- Arrays\n4- Recursive"
          */
     }
 

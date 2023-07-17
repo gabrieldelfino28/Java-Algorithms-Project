@@ -21,21 +21,21 @@ public class DecisionStructure {
         String Label = """
                 Batch 1 - Decision Structure
                 0- To exit
-                1- Liquid Wage (16)
-                2- Liter Quantity Calculus (17)
-                3- Integer value difference (18)
-                4- Biggest real/double value (19)
-                5- Second degree Equation (20)
-                6- Average Grade (21)
-                7- Values in Ascending order (22)
-                8- 3 Numbers in ascending order and the 4th random (23)
-                9- To see if a number is divisible by 2 and 3 (24)
-                10- Game Start and End Timing (25)
-                11- Verify if biggest value is the multiple of the smaller value (26)
-                12- (27)
-                13- (28)
-                14- (29)
-                15- (30)\s""";
+                1- Liquid Wage - (16)
+                2- Liter Quantity Calculus - (17)
+                3- Integer value difference - (18)
+                4- Biggest real/double value - (19)
+                5- Second degree Equation - (20)
+                6- Average Grade - (21)
+                7- Values in Ascending order - (22)
+                8- 3 Numbers in ascending order and the 4th random - (23)
+                9- To see if a number is divisible by 2 and 3 - (24)
+                10- Game Start and End Timing - (25)
+                11- Verify if biggest value is the multiple of the smaller value - (26)
+                12- Average Speed of a Race Circuit - (27)
+                13- Price of a Product based on the monthly sales - (28)
+                14- Simple Investment system (kinda) - (29)
+                15- Age calculation (including leap years) - (30)\s""";
         do {
             Menu = Integer.parseInt(JOptionPane.showInputDialog(Label));
             switch (Menu) {
@@ -124,12 +124,12 @@ public class DecisionStructure {
             //X = -b +- sqrt(Dt) / 2*a
             double x1 = ((-B) + Math.pow(Dt, 0.5)) / (2 * A);
             double x2 = ((-B) - Math.pow(Dt, 0.5)) / (2 * A);
-            JOptionPane.showMessageDialog(null, "X' value: " + x1 + "X'' values: " + x2);
+            JOptionPane.showMessageDialog(null, "X' value: " + x1 + " X'' values: " + x2);
 
         } else {
             double x1 = ((-B) + Math.pow(Dt, 0.5)) / (2 * A);
             double x2 = ((-B) - Math.pow(Dt, 0.5)) / (2 * A);
-            JOptionPane.showMessageDialog(null, "X' value: " + x1 + "X'' values: " + x2);
+            JOptionPane.showMessageDialog(null, "X' value: " + x1 + " X'' values: " + x2);
         }
     }
 
@@ -151,16 +151,14 @@ public class DecisionStructure {
         int[] order = new int[2];
 
         order = m.AscendingOrder_22(order, number1, number2); //Ordering Function
-
         JOptionPane.showMessageDialog(null, "Ascending order: " + order[0] + " " + order[1]);
     }
 
     public void Ex_23() {
         int[] num = new int[4];
         for (int i = 0; i < num.length; i++) {
-            num[i] = Integer.parseInt(JOptionPane.showInputDialog((i + 1) + " | 3 numbers in order and last one random: "));
+            num[i] = Integer.parseInt(JOptionPane.showInputDialog((i + 1) + "º | 3 numbers in order and last one random: "));
         }
-
         m.Ordering_23(num);
 
     }
@@ -172,7 +170,24 @@ public class DecisionStructure {
     }
 
     public void Ex_25() {
+        int horaInicial = Integer.parseInt(JOptionPane.showInputDialog("Inform the initial hour (0 - 24)"));
+        int minInicial = Integer.parseInt(JOptionPane.showInputDialog("Inform the initial minutes (0 - 60) "));
+        int horaFinal = Integer.parseInt(JOptionPane.showInputDialog("Inform the final hour (0 - 24)"));
+        int minFinal = Integer.parseInt(JOptionPane.showInputDialog("Inform the final minutes (0 - 24)"));
 
+        int horaDuracao = m.HourCalculation_25(horaInicial, horaFinal);
+        int minDuracao = m.MinuteCalculation_25(minInicial, minFinal);
+
+        if (minDuracao > minInicial) {
+            horaDuracao -= 1;
+        }
+
+        /* Example/Test
+         * 23 : 30  + 00:30 == 00:00 + 00:15 = 00:15 hence 45 mins + 02:00-> 02:45 duration
+         * 02 : 15
+         */
+
+        JOptionPane.showMessageDialog(null, "Game duration: " + horaDuracao + " hours and " + minDuracao + " minutes.");
     }
 
     public void Ex_26() {
@@ -193,11 +208,28 @@ public class DecisionStructure {
     }
 
     public void Ex_28() {
+        double precoInicial = Double.parseDouble(JOptionPane.showInputDialog("Inform the initial price"));
+        double valorMensal = Double.parseDouble(JOptionPane.showInputDialog("Inform the monthly value"));
+        double precoAtual = m.NewPriceCalculation_28(precoInicial, valorMensal);
+
+        JOptionPane.showMessageDialog(null, "The new price of the product 'x' will be: " + precoAtual);
     }
 
     public void Ex_29() {
+        int tipoInvestimento;
+        do {
+            tipoInvestimento = Integer.parseInt(JOptionPane.showInputDialog("Inform the type of investment.\n1 - Savings 2 - Fixed Income"));
+            if (tipoInvestimento != 1 && tipoInvestimento != 2) {
+                JOptionPane.showMessageDialog(null, "Invalid input.");
+            }
+        } while (tipoInvestimento != 1 && tipoInvestimento != 2);
+        double valorInvestimento = Double.parseDouble(JOptionPane.showInputDialog("Inform the value of the investment"));
+        double valorNovo = m.NewValueInvestment_29(tipoInvestimento, valorInvestimento);
+
+        JOptionPane.showMessageDialog(null, "New value after 30 days will be: " + valorNovo);
     }
 
     public void Ex_30() {
+
     }
 }

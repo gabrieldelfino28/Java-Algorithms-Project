@@ -67,6 +67,23 @@ public class Dmethods {
         }
     }
 
+    public int HourCalculation_25(int hI, int hF) {
+        if (hI < hF) {
+            return hF - hI;
+        } else {
+            return (24 - hI) + hF;
+        }
+    }
+
+    public int MinuteCalculation_25(int minInicial, int minFinal) {
+        if (minInicial <= minFinal) {
+            return minFinal - minInicial;
+        } else {
+            return (60 - minInicial) + minFinal;
+        }
+    }
+
+
     public void Ordering_26(int n1, int n2) {
 
         if (n1 > n2) {
@@ -88,7 +105,32 @@ public class Dmethods {
 
     public double AverageSpeed_27(double nV, double eC, double T) {
         T *= 60;
-        return (nV * eC * T) * (3.6);
+        return (nV * eC / T) * (3.6);
+    }
+
+    public double NewPriceCalculation_28(double pI, double vM) {
+        if (vM < 500 && pI > 30) {
+            return pI * 1.10; //10% more
+        }
+        if ((vM >= 500 && vM < 1000) && (pI >= 30 && pI < 80)) {
+            return pI * 1.15; //15% more
+        }
+        if (vM >= 1000 && pI >= 80) {
+            return pI * 0.95;
+        }
+        return pI;
+    }
+
+    public double NewValueInvestment_29(int tI, double vI) {
+        switch (tI) {
+            case 1 -> {
+                return vI * 1.03;
+            }
+            case 2 -> {
+                return vI * 1.05;
+            }
+        }
+        return vI;
     }
 
 }
