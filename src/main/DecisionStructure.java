@@ -70,7 +70,7 @@ public class DecisionStructure {
         sal.discount = Double.parseDouble(JOptionPane.showInputDialog("Inform the discount percentage"));
         sal.desN = Double.parseDouble(JOptionPane.showInputDialog("Inform the descendants quantity"));
 
-        //Calculus
+        //Calculation
         sal.desN = sal.desN * 100;
         sal.discount = (sal.discount / 100);
         sal.sB = (sal.hourQ * sal.hourV);
@@ -166,7 +166,6 @@ public class DecisionStructure {
     public void Ex_24() {
         int number = Integer.parseInt(JOptionPane.showInputDialog("Inform a value: "));
         m.DivisibleNumber_24(number);
-
     }
 
     public void Ex_25() {
@@ -182,9 +181,12 @@ public class DecisionStructure {
             horaDuracao -= 1;
         }
 
-        /* Example/Test
+        /*
+         * Example/Test
          * 23 : 30  + 00:30 == 00:00 + 00:15 = 00:15 hence 45 mins + 02:00-> 02:45 duration
-         * 02 : 15
+         * When the game ended 02 : 15
+         * When the game started 23 : 15
+         * 02 : 45
          */
 
         JOptionPane.showMessageDialog(null, "Game duration: " + horaDuracao + " hours and " + minDuracao + " minutes.");
@@ -230,6 +232,21 @@ public class DecisionStructure {
     }
 
     public void Ex_30() {
+
+        int anoNascimento = Integer.parseInt(JOptionPane.showInputDialog("Inform your birthday year"));
+        int mesNascimento = Integer.parseInt(JOptionPane.showInputDialog("Inform your birthday month"));
+        int diaNascimento = Integer.parseInt(JOptionPane.showInputDialog("Inform your birthday day"));
+
+        int anoAtual = Integer.parseInt(JOptionPane.showInputDialog("Inform your today's year"));
+        int mesAtual = Integer.parseInt(JOptionPane.showInputDialog("Inform your today's month"));
+        int diaAtual = Integer.parseInt(JOptionPane.showInputDialog("Inform your today's day"));
+
+        int anos = anoAtual - anoNascimento;
+
+        int meses = anos*12;
+
+
+
 
     }
 }

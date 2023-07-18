@@ -24,10 +24,34 @@ public class Main extends JFrame {
         text.setFont(new Font("Tahoma", Font.BOLD, 12));
         screen.add(text);
 
-        button1 = new JButton("1- Decision structures");
+        button1 = new JButton("1- Decision Structures");
         button1.setBounds(20, 30, 200, 28);
         screen.add(button1);
         button1.addActionListener(e -> {
+            DecisionStructure batch_1 = new DecisionStructure();
+            batch_1.main();
+        });
+
+        button2 = new JButton("2- Loop Structures");
+        button2.setBounds(20, 70, 200, 28);
+        screen.add(button2);
+        button2.addActionListener(e -> {
+            DecisionStructure batch_1 = new DecisionStructure();
+            batch_1.main();
+        });
+
+        button3 = new JButton("3- Arrays (Matrix and Vectors)");
+        button3.setBounds(20, 110, 200, 28);
+        screen.add(button3);
+        button3.addActionListener(e -> {
+            DecisionStructure batch_1 = new DecisionStructure();
+            batch_1.main();
+        });
+
+        button4 = new JButton("4- Recursive");
+        button4.setBounds(20, 150, 200, 28);
+        screen.add(button4);
+        button4.addActionListener(e -> {
             DecisionStructure batch_1 = new DecisionStructure();
             batch_1.main();
         });
