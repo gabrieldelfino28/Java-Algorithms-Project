@@ -11,3 +11,6 @@ Isto é um projeto pessoal no qual eu estava pensando sobre, onde eu combino tod
 faculdade durante o meu segundo semestre com java, num único grande projeto.
 
 Este projeto incluí Arrays (Vetores e Matrizes), laços de repetição, recursivas classes abstratas e mais.
+
+# [Lista de Exercícios - Exercises List.pdf]
+https://github.com/gabrieldelfino28/Java-Algorithms-Project/files/12089049/Lista.de.Exercicios.-.Exercises.List.pdf
