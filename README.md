@@ -26,7 +26,7 @@ Este projeto envolve:
 * Objetos
 * Classes abstratas e mais
 
-##Project structure
+## Project structure
 ````
 Java Algorithms Project
 |──out
