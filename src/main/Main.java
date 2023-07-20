@@ -8,8 +8,6 @@ package main;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class Main extends JFrame {
     JButton button1, button2, button3, button4, button5;
@@ -36,24 +34,22 @@ public class Main extends JFrame {
         button2.setBounds(20, 70, 200, 28);
         screen.add(button2);
         button2.addActionListener(e -> {
-            DecisionStructure batch_1 = new DecisionStructure();
-            batch_1.main();
+            LoopStructure batch_2 = new LoopStructure();
+            batch_2.main();
         });
 
         button3 = new JButton("3- Arrays (Matrix and Vectors)");
         button3.setBounds(20, 110, 200, 28);
         screen.add(button3);
         button3.addActionListener(e -> {
-            DecisionStructure batch_1 = new DecisionStructure();
-            batch_1.main();
+            JOptionPane.showMessageDialog(null,"WIP");
         });
 
         button4 = new JButton("4- Recursive");
         button4.setBounds(20, 150, 200, 28);
         screen.add(button4);
         button4.addActionListener(e -> {
-            DecisionStructure batch_1 = new DecisionStructure();
-            batch_1.main();
+            JOptionPane.showMessageDialog(null,"WIP");
         });
 
         button5 = new JButton("Exit");

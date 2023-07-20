@@ -6,8 +6,8 @@ package main;
  * Warning: Most of the Variables might be in portuguese, though the input text from the menus is in english.
  */
 
-import main.DSmethods.Batch_16.Dmethods;
-import main.DSmethods.Batch_16.liquidWage;
+import main.DSmethods.Dmethods;
+import main.DSmethods.liquidWage;
 
 import javax.swing.*;
 
@@ -169,6 +169,10 @@ public class DecisionStructure {
     }
 
     public void Ex_25() {
+        /*
+         *  Objetive: Calculate the duration of a generic game, receiving the initial and ending time of the game.
+         */
+
         int horaInicial = Integer.parseInt(JOptionPane.showInputDialog("Inform the initial hour (0 - 24)"));
         int minInicial = Integer.parseInt(JOptionPane.showInputDialog("Inform the initial minutes (0 - 60) "));
         int horaFinal = Integer.parseInt(JOptionPane.showInputDialog("Inform the final hour (0 - 24)"));
@@ -233,20 +237,43 @@ public class DecisionStructure {
 
     public void Ex_30() {
 
-        int anoNascimento = Integer.parseInt(JOptionPane.showInputDialog("Inform your birthday year"));
-        int mesNascimento = Integer.parseInt(JOptionPane.showInputDialog("Inform your birthday month"));
-        int diaNascimento = Integer.parseInt(JOptionPane.showInputDialog("Inform your birthday day"));
+        int dia0 = Integer.parseInt(JOptionPane.showInputDialog("Inform your birthday day"));
+        int mes0 = Integer.parseInt(JOptionPane.showInputDialog("Inform your birthday month"));
+        int ano0 = Integer.parseInt(JOptionPane.showInputDialog("Inform your birthday year"));
 
-        int anoAtual = Integer.parseInt(JOptionPane.showInputDialog("Inform your today's year"));
-        int mesAtual = Integer.parseInt(JOptionPane.showInputDialog("Inform your today's month"));
-        int diaAtual = Integer.parseInt(JOptionPane.showInputDialog("Inform your today's day"));
+        int dia1 = Integer.parseInt(JOptionPane.showInputDialog("Inform your current day"));
+        int mes1 = Integer.parseInt(JOptionPane.showInputDialog("Inform your current month"));
+        int ano1 = Integer.parseInt(JOptionPane.showInputDialog("Inform your current year"));
 
-        int anos = anoAtual - anoNascimento;
+        if (dia1 < dia0) { //If the current day is < than the bday then ...
+            mes1 -= 1;
+            if (mes1 < 8) { //if it's before August
+                if (mes1 == 2) { //if it's Feb
+                    if (ano1 % 4 == 0) { //Checking if Fab is in a leap year or not
+                        dia1 += 29;
+                    } else {
+                        dia1 += 28;
+                    }
+                } else if (mes1 % 2 > 0 || mes1 == 0) { //if it's not feb, then check if it's pairs(evens) or odds
+                    dia1 += 31;
+                } else {
+                    dia1 += 30;
+                }
+            } else if (mes1 % 2 == 0) {//After august (including august)
+                dia1 += 31;//even
+            } else {
+                dia1 += 30;//odd
+            }
+        }
 
-        int meses = anos*12;
+        if (mes1 < mes0) {
+            ano1 -= 1;
+            mes1 += 12;
+        }
+        int anodiff = ano1 - ano0;
+        int mesdiff = mes1 - mes0;
+        int diadiff = dia1 - dia0;
 
-
-
-
+        JOptionPane.showMessageDialog(null, "Your age is: " + anodiff + " years, " + mesdiff + " months and " + diadiff + " days.");
     }
 }

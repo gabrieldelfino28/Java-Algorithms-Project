@@ -1,4 +1,4 @@
-package main.DSmethods.Batch_16;
+package main.DSmethods;
 
 public class liquidWage {
     public double hourQ;

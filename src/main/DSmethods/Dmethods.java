@@ -1,4 +1,4 @@
-package main.DSmethods.Batch_16;
+package main.DSmethods;
 
 import javax.swing.*;
 
